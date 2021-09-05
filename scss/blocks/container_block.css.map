@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,UAAW;EACT,KAAK,EAAE,IAAI;EACX,gBAAgB,EAAE,IAAI",
+"sources": ["container_block.scss"],
+"names": [],
+"file": "container_block.css"
+}

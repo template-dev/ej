@@ -1,0 +1,139 @@
+.header {
+  background-color: $colorHeader;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 15px 0;
+  position: fixed;
+
+  #burger {
+    width: 25px;
+    height: 25px;
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+
+    span {
+      width: 100%;
+      height: 4px;
+      margin-top: 4px;
+      background-color: $colorWhite;
+      border-radius: 5px;
+      @include transitionM();
+    }
+
+    &:hover {
+      span {
+        background-color: $colorGreenBtn;
+      }
+    }
+  }
+
+  .topMenu {
+    ul {
+      display: flex;
+      li {
+        list-style: none;
+        display: flex;
+
+        a {
+          padding: 15px 0;
+          margin: 0 15px;
+          text-decoration: none;
+          color: #fff;
+          font-size: 18px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          position: relative;
+          @include transitionM();
+
+          &::before {
+            content: "";
+            width: 0;
+            height: 3px;
+            background-color: $colorGreenBtn;
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            @include transitionM();
+          }
+
+          &:hover {
+            color: $colorGreenBtn;
+            @include transitionM();
+
+            &::before {
+              content: "";
+              width: 50%;
+              height: 3px;
+              background-color: $colorGreenBtn;
+              position: absolute;
+              left: 0;
+              bottom: 5px;
+              @include transitionM();
+            }
+          }
+        }
+
+        #signIn {
+          /*background-color: $colorGreenBtn;
+          border-radius: 5px;
+          padding: 15px 20px;
+          border: 1px solid lighten($colorGreenBtn, 5%);
+
+          &::before {
+            content: "";
+            width: 0;
+          }
+
+          &:hover {
+            border: 1px solid darken($colorGreenBtn, 5%);
+            background-color: darken($colorGreenBtn, 10%);
+            color: #fff;
+          }*/
+          @include signInBtn();
+        }
+      }
+    }
+  }
+}
+
+.burger_active {
+  width: 25px;
+  height: 25px;
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+
+  span {
+    width: 100%;
+    height: 4px;
+    margin-top: 4px;
+    background-color: $colorWhite;
+    border-radius: 5px;
+    @include transitionM();
+  }
+
+  span:nth-child(1) {
+    transform: rotate(45deg) translateX(11px);
+    @include transitionM();
+  }
+
+  span:nth-child(2) {
+    opacity: 0;
+    @include transitionM();
+  }
+
+  span:nth-child(3) {
+    transform: rotate(-45deg) translateX(11px);
+    @include transitionM();
+  }
+
+  &:hover {
+    span {
+      background-color: $colorGreenBtn;
+    }
+  }
+}

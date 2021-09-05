@@ -1,0 +1,69 @@
+.modalSignIn {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 21, 21, 0.6);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  .modalSignIn_wrap {
+    width: 350px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: $colorWhite;
+    display: flex;
+    flex-direction: column;
+
+    .titleSignIn {
+      p {
+        font-size: 22px;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 15px 0;
+      }
+    }
+
+    .mainSignIn {
+      form {
+        span {
+          display: flex;
+          flex-direction: column;
+          padding: 10px 0;
+
+          label {
+            font-size: 18px;
+          }
+
+          input {
+            font-size: 16px;
+            padding: 7px;
+          }
+        }
+      }
+    }
+
+    .submitBtnSignIn {
+      padding: 15px 0;
+      form {
+        display: flex;
+        flex-direction: column;
+
+        input[type="submit"] {
+          margin-top: 10px;
+          padding: 10px 0;
+          font-size: 16px;
+          cursor: pointer;
+          color: $colorWhite;
+          @include transitionM();
+          @include signInBtn();
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@media screen and (max-width: 960px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 10px 0;
+  }
+
+  .topMenu {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .container {
+    .header {
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+
+        #burger {
+          display: flex;
+        }
+      }
+
+      .topMenu {
+        display: none;
+        width: 100%;
+        ul {
+          display: flex;
+          flex-direction: column;
+
+          li {
+            a {
+              width: 100%;
+              border-radius: 5px;
+              text-align: center;
+              margin-top: 10px;
+
+              &::before {
+                content: "";
+                width: 0;
+                height: 3px;
+                position: absolute;
+                left: 0;
+                bottom: 5px;
+                @include transitionM();
+              }
+
+              &:hover {
+                background-color: lighten($colorHeader, 5%);
+                color: $colorWhite;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

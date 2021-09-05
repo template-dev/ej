@@ -1,0 +1,31 @@
+/*@mixin min-max($min-width, $max-width, $padding) {
+  min-width: $min-width;
+  max-width: $max-width;
+  padding: 0 $padding;
+  box-sizing: border-box;
+  margin: 0 auto;
+}*/
+
+@mixin transitionM($value: 0.4s) {
+  -webkit-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+
+@mixin signInBtn() {
+  background-color: $colorGreenBtn;
+  border-radius: 5px;
+  padding: 15px 20px;
+  border: 1px solid lighten($colorGreenBtn, 5%);
+
+  &::before {
+    content: "";
+    width: 0;
+  }
+
+  &:hover {
+    border: 1px solid darken($colorGreenBtn, 5%);
+    background-color: darken($colorGreenBtn, 10%);
+    color: #fff;
+  }
+}
